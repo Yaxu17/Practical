@@ -9,6 +9,7 @@ import {
 import Home from "./components/home"
 import About from "./components/about"
 import Contact from "./components/contact"
+import pr2 from "./components/pr2"
 
 function App() {
   return (
@@ -16,40 +17,20 @@ function App() {
 
       <nav>
         <Link to="/">Home</Link> | 
-        <Link to="/about">About</Link> | 
-        <Link to="/contact">Contact</Link>
+        <Link to="/components/about">About</Link> | 
+        <Link to="/components/contact">Contact</Link> | 
+        <Link to="/components/pr2">pr2</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/components/about" element={<About />} />
+        <Route path="/components/contact" element={<Contact />} />
+        <Route path="/components/pr2" element={<pr2 />} />
       </Routes>
 
     </BrowserRouter>
   );
 }
 
-import React, { useState } from "react";
-
-function event() {
-  const [name, setName] = useState("");
-
-  return (
-    <div>
-      <h1>Live Input</h1>
-
-      <input
-        type="text"
-        placeholder="Enter Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-
-      <h2>{name}</h2>
-    </div>
-  );
-}
-
-export default event;
 export default App;
